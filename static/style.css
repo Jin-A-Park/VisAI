@@ -1,0 +1,121 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2rem;
+}
+
+h1 {
+  padding: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  margin: 0;
+  font-weight: bold;
+}
+
+.cssbuttons-io {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  border-radius: 1.2em;
+  cursor: pointer;
+  border: none;
+  color: ghostwhite;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cssbuttons-io svg {
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.4em;
+}
+
+.cssbuttons-io span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cssbuttons-io::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+  transform: scale(0.95);
+}
+
+#start_button {
+  background: linear-gradient(to right, #0d6a1d, #33d440);
+}
+
+#stop_button {
+  background: linear-gradient(to right, #ff0000, #ff9900);
+}
+
+#resume_button {
+  background: linear-gradient(to right, #0059b3, #00bfff);
+}
+
+button:disabled {
+  background-color: #d6d6d6;
+  color: #a1a1a1;
+}
+
+/* Graph Container Layout */
+.vis-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.graph-frame {
+  background: #ffffff;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0.5rem 0;
+  height: 230px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .vis-container {
+    grid-template-columns: 1fr;
+  }
+}
